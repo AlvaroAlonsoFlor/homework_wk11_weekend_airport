@@ -4,14 +4,14 @@ public enum PlaneType {
     BATFLYINGCAVE(30),
     TINYPLANE(3);
 
-    private final int value;
+    private final int capacity;
 
-    PlaneType(int value) {
-        this.value = value;
+    PlaneType(int capacity) {
+        this.capacity = capacity;
     }
 
-    public int getValue() {
-        return value;
+    public int getCapacity() {
+        return capacity;
     }
 
 }
