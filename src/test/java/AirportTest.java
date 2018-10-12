@@ -54,4 +54,9 @@ public class AirportTest {
     public void canCreateFlightNoPlane() {
         assertNull(airport.createFlight(plane1, 4, "Nowhere"));
     }
+
+    @Test
+    public void addPassengers() {
+
+    }
 }
