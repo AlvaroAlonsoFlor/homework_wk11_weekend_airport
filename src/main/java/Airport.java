@@ -51,4 +51,20 @@ public class Airport {
     public boolean removePlane(Plane plane) {
         return hangar.remove(plane);
     }
+
+    public boolean sellTicket(Flight flight, String passenger) {
+        if (findFlight(flight) != null && flight.getPlane().addPassenger(passenger)) {
+            return true;
+        }
+        return false;
+    }
+
+    public Flight findFlight(Flight flighttoSearch) {
+        for (Flight flight: flights) {
+            if (flight == flighttoSearch) {
+                return flight;
+            }
+        }
+        return null;
+    }
 }
