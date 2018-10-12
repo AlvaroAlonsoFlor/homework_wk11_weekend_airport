@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class AirportTest {
@@ -36,9 +37,18 @@ public class AirportTest {
         assertTrue(airport.removePlane(plane1));
     }
 
-//    @Test
-//    public void canCreateFlight() {
-//        airport.createFlight(plane1, 3, "Endor");
-//        assertEquals(1, airport.countFlights());
-//    }
+    @Test
+    public void removePlaneFalse() {
+        airport.addPlane(plane2);
+        assertFalse(airport.removePlane(plane1));
+    }
+
+
+
+    @Test
+    public void canCreateFlight() {
+        airport.addPlane(plane1);
+        airport.createFlight(plane1, 3, "Endor");
+        assertEquals(1, airport.countFlights());
+    }
 }

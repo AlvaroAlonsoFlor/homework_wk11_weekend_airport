@@ -16,10 +16,18 @@ public class Airport {
         return flights.size();
     }
 
-    public void createFlight(Plane plane, int flightNumber, String destination) {
-        //find plane
-        //if found remove plane from hangar
-        //create flight
+    public Flight createFlight(Plane plane, int flightNumber, String destination) {
+
+        if (findPlane(plane) != null) {
+            removePlane(plane);
+            Flight flight = new Flight(plane, flightNumber, destination);
+            flights.add(flight);
+            return flight;
+        }
+
+        return null;
+
+
     }
 
     public void addPlane(Plane plane) {
