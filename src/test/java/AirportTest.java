@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class AirportTest {
     Plane plane1;
@@ -27,6 +28,12 @@ public class AirportTest {
     public void findPlane() {
         airport.addPlane(plane1);
         assertEquals(plane1, airport.findPlane(plane1));
+    }
+
+    @Test
+    public void removePlane() {
+        airport.addPlane(plane1);
+        assertTrue(airport.removePlane(plane1));
     }
 
 //    @Test

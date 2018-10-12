@@ -18,6 +18,8 @@ public class Airport {
 
     public void createFlight(Plane plane, int flightNumber, String destination) {
         //find plane
+        //if found remove plane from hangar
+        //create flight
     }
 
     public void addPlane(Plane plane) {
@@ -35,5 +37,10 @@ public class Airport {
             }
         }
         return null;
+    }
+
+
+    public boolean removePlane(Plane plane) {
+        return hangar.remove(plane);
     }
 }
