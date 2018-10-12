@@ -1,9 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class AirportTest {
     Plane plane1;
@@ -50,5 +48,10 @@ public class AirportTest {
         airport.addPlane(plane1);
         airport.createFlight(plane1, 3, "Endor");
         assertEquals(1, airport.countFlights());
+    }
+
+    @Test
+    public void canCreateFlightNoPlane() {
+        assertNull(airport.createFlight(plane1, 4, "Nowhere"));
     }
 }
