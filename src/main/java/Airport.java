@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Airport {
-    ArrayList<Plane> hangar;
-    ArrayList<Flight> flights;
-    AirportCode airportCode;
+    private ArrayList<Plane> hangar;
+    private ArrayList<Flight> flights;
+    private AirportCode airportCode;
 
     Airport(AirportCode airportCode) {
         this.hangar = new ArrayList<>();
@@ -16,6 +17,23 @@ public class Airport {
     }
 
     public void createFlight(Plane plane, int flightNumber, String destination) {
-        flights.add(new Flight(plane, flightNumber, destination));
+        //find plane
+    }
+
+    public void addPlane(Plane plane) {
+        hangar.add(plane);
+    }
+
+    public int countPlanes() {
+        return hangar.size();
+    }
+
+    public Plane findPlane(Plane planetoSearch) {
+        for (Plane plane: this.hangar) {
+            if (plane == planetoSearch) {
+                return plane;
+            }
+        }
+        return null;
     }
 }

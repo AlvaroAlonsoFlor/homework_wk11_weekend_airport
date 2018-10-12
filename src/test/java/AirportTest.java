@@ -11,14 +11,27 @@ public class AirportTest {
 
     @Before
     public void before() {
-        plane1 = new Plane(PlaneType.BATFLYINGCAVE);
-        plane2 = new Plane(PlaneType.TINYPLANE);
+        plane1 = new Plane(PlaneType.BATFLYINGCAVE, "Batman Airlines");
+        plane2 = new Plane(PlaneType.TINYPLANE, "SmallWorld Airlines");
         flight1 = new Flight(plane2, 2, "TestLand");
+        airport = new Airport(AirportCode.EDI);
     }
 
     @Test
-    public void canCreateFlight() {
-        airport.createFlight(plane1, 3, "Endor");
-        assertEquals(1, airport.countFlights());
+    public void addPlane() {
+        airport.addPlane(plane1);
+        assertEquals(1, airport.countPlanes());
     }
+
+    @Test
+    public void findPlane() {
+        airport.addPlane(plane1);
+        assertEquals(plane1, airport.findPlane(plane1));
+    }
+
+//    @Test
+//    public void canCreateFlight() {
+//        airport.createFlight(plane1, 3, "Endor");
+//        assertEquals(1, airport.countFlights());
+//    }
 }
