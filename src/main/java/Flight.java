@@ -23,4 +23,7 @@ public class Flight {
         return destination;
     }
 
+    public void updatePlane(Plane plane) {
+        this.plane = plane;
+    }
 }
