@@ -56,4 +56,18 @@ public class PlaneTest {
         assertEquals(true, plane.addSeveralPassengers(passengers));
         assertEquals(3, plane.countPassengers());
     }
+
+    @Test
+    public void findPassenger() {
+        ArrayList<String> passengers = new ArrayList<>();
+        passengers.add("German");
+        passengers.add("Alvaro");
+        passengers.add("Foteini");
+        passengers.add("Ben");
+        passengers.add("Colin");
+        passengers.add("Alison");
+
+        assertTrue(plane.addSeveralPassengers(passengers));
+        assertTrue(plane.findPassenger("Ben"));
+    }
 }

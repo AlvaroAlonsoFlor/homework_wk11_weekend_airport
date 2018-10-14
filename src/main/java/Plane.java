@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Plane {
     private PlaneType type;
@@ -55,15 +56,16 @@ public class Plane {
 
     public boolean addSeveralPassengers(ArrayList<String> passengers) {
         if (seatsAvailable >= passengers.size()) {
-//            for (String passenger: passengers) {
-//                this.passengers.add(passenger);
-//            }
-            // I could do that but I will be always using it at the beginning
             this.passengers = passengers;
             seatsAvailable -= passengers.size();
             return true;
         }
 
         return false;
+    }
+
+
+    public boolean findPassenger(String passenger) {
+        return passengers.contains(passenger);
     }
 }
