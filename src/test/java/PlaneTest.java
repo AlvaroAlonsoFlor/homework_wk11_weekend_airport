@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -42,5 +44,16 @@ public class PlaneTest {
         assertFalse(tinyplane.enoughSpace());
         assertEquals(3, tinyplane.countPassengers());
         assertEquals(0,tinyplane.getSeatsAvailable());
+    }
+
+    @Test
+    public void addSeveralPassengers() {
+        ArrayList<String> passengers = new ArrayList<>();
+        passengers.add("Thor");
+        passengers.add("Alvaro");
+        passengers.add("Estrella");
+
+        assertEquals(true, plane.addSeveralPassengers(passengers));
+        assertEquals(3, plane.countPassengers());
     }
 }

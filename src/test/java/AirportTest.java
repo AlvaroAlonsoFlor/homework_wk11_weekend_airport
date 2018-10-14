@@ -61,6 +61,5 @@ public class AirportTest {
         Flight endorFlight = airport.createFlight(plane1, 3, "Endor");
         airport.sellTicket(endorFlight, "Luke Skywalker");
         assertEquals(1, endorFlight.getPlane().countPassengers());
-        //assert
     }
 }

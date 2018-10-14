@@ -39,6 +39,8 @@ public class Plane {
         return false;
     }
 
+
+
     public boolean enoughSpace() {
         if (seatsAvailable > 0) {
             return true;
@@ -51,4 +53,16 @@ public class Plane {
     }
 
 
+    public boolean addSeveralPassengers(ArrayList<String> passengers) {
+        if (seatsAvailable >= passengers.size()) {
+//            for (String passenger: passengers) {
+//                this.passengers.add(passenger);
+//            }
+            // I could do that but I will be always using it at the beginning
+            this.passengers = passengers;
+            return true;
+        }
+
+        return false;
+    }
 }
