@@ -62,4 +62,15 @@ public class AirportTest {
         airport.sellTicket(endorFlight, "Luke Skywalker");
         assertEquals(1, endorFlight.getPlane().countPassengers());
     }
+
+    @Test
+    public void prepareFlightChangePlane() {
+        airport.addPlane(plane1);
+        airport.addPlane(plane2);
+        Flight batFlight = airport.createFlight(plane1, 3, "BatCave");
+        airport.sellTicket(batFlight, "Robin");
+        airport.prepareFlight(batFlight);
+        assertEquals(plane2, batFlight.getPlane());
+
+    }
 }

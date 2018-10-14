@@ -67,4 +67,23 @@ public class Airport {
         }
         return null;
     }
+
+    public void prepareFlight(Flight batFlight) {
+        int passengersNum = batFlight.getPlane().countPassengers();
+        ArrayList<String> passengers = batFlight.getPlane().getPassengers();
+        int capacity = batFlight.getPlane().getType().getCapacity();
+        int seatsAvailable = batFlight.getPlane().getSeatsAvailable();
+
+
+
+        for (Plane plane: hangar) {
+            int seatsAvailableNewPlane = plane.getType().getCapacity() - passengersNum;
+            if (seatsAvailable > seatsAvailableNewPlane  && seatsAvailableNewPlane > 0 ) {
+                plane.addSeveralPassengers(passengers);
+                batFlight.updatePlane(plane);
+                prepareFlight(batFlight);
+            }
+
+        }
+    }
 }
