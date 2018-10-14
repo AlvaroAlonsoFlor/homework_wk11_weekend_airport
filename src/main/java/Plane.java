@@ -60,6 +60,7 @@ public class Plane {
 //            }
             // I could do that but I will be always using it at the beginning
             this.passengers = passengers;
+            seatsAvailable -= passengers.size();
             return true;
         }
 
